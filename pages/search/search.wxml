@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header">
+    <input class="search"  placeholder="{{ subtitle }}" placeholder-class="search-placeholder" focus bindchange="handleSearch" />
+  </view>
+  <view scroll-y="true" class="list">
+    <view class="tips">
+      <view wx:if="{{ loading }}">
+        <image src="/images/loading.gif" mode="aspectFill"/>
+        <text>刷新中...</text>
+      </view>
+    </view>
+    <!-- <product /> -->
+    <product api="music" wx:for="{{list}}" wx:key="item.id" item="{{item}}"></product>
+    
+    <view class="tips" wx:if="{{list.length>0}}">
+      <view wx:if="{{ hasMore }}">
+        <image src="/images/loading.gif" mode="aspectFill"/>
+        <text>玩了命的加载中...</text>
+      </view>
+      <view wx:else>
+        <text>没有更多内容了</text>
+      </view>
+    </view>
+  </view>
+</view>

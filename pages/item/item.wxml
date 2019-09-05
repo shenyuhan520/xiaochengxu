@@ -1,0 +1,23 @@
+<view class="container">
+  
+  <block wx:if="{{detail.image}}">
+    <image class="background" src="{{detail.image}}" mode="aspectFill"/>
+    <view scroll-y="true" class="container">
+      <view class="meta">
+        <image class="poster" src="{{detail.image}}" mode="aspectFit" bindtap='clickImage'/>
+        <text class="title">{{detail.alt_title}}({{detail.attrs.pubdate[1]}})</text>
+        <text class="info yu">评分：{{detail.rating.average}}</text>
+        <text class="info">导演： {{detail.author[0].name}} </text>
+        <text class="info ">主演： {{detail.author[1].name}} </text>
+        <text class="info shen">简述：><block wx:for="{{detail.tags}}" wx:key="{{item.count}}"> {{item.name}}</block> </text>
+      </view>
+      <view class="summary">
+        <text class="label">摘要：</text>
+        <text class="content">{{detail.summary}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view wx:else>骨架屏</view>
+  
+</view>

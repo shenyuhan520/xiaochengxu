@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#ffffff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "product": "../../components/product/product"
+  }
+}
